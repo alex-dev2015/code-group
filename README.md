@@ -6,6 +6,7 @@
 - [Iniciando](#getting_started)
 - [Prerequisitos](#requisite)
 - [Backend](#backend)
+- [Documentação](#docs)
 - [Frontend](#frontend)
 - [Tecnologias](#tech)
 - [Licença](#license)
@@ -64,6 +65,15 @@ $ php artisan serve
 Por padrão ao subir o servidor com o artisan, ele é iniciado na porta 8000
 ```
 http:\\localhost:8000
+```
+### 📋 Documentação com o Swagger <a name = "docs"></a>
+
+Após subir o servidor, é possível acessar a documentação da API através do seguinte link:
+
+```
+
+http://localhost:8000/api/documentation
+
 ```
 
 ### 📊 Instalação do Frontend <a name = "frontend"></a>

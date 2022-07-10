@@ -1,0 +1,184 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api de clientes",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api": {},
+        "/api/clients": {
+            "get": {
+                "summary": "Lista os clientes cadastrados",
+                "operationId": "d00d20521584ab5da83e088abb7aded2",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Adiciona um novo cliente",
+                "operationId": "f1e86e5b79fedfa6593067977292b13b",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "cpf": {
+                                        "type": "string"
+                                    },
+                                    "mail": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "type": "string"
+                                    },
+                                    "address": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "name": "Alex Sousa",
+                                    "cpf": "04298745670",
+                                    "mail": "alex.sousa20@hotmail.com",
+                                    "phone": "98988888888",
+                                    "address": "Rua da Esperança"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/clients/{client}": {
+            "get": {
+                "summary": "Mostra os detalhes de um cliente",
+                "operationId": "e1b94279234de95a7144b78642cd2e45",
+                "parameters": [
+                    {
+                        "name": "client",
+                        "in": "path",
+                        "description": "Código do Cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "id": {
+                                "summary": "Código do cliente.",
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Atualiza um Cliente",
+                "operationId": "0c9a2108c7f6120cd8c12ece56a85b74",
+                "parameters": [
+                    {
+                        "name": "client",
+                        "in": "path",
+                        "description": "Código do Cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "id": {
+                                "summary": "Código do cliente.",
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "cpf": {
+                                        "type": "string"
+                                    },
+                                    "mail": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "type": "string"
+                                    },
+                                    "address": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "name": "Alex Sousa",
+                                    "cpf": "04298745670",
+                                    "mail": "alex.sousa20@hotmail.com",
+                                    "phone": "98988888888",
+                                    "address": "Rua da Esperança"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "code_client": {
+                "title": "client",
+                "properties": {
+                    "id": {
+                        "type": "bigint"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "cpf": {
+                        "type": "string"
+                    },
+                    "mail": {
+                        "type": "string"
+                    },
+                    "phone": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "timestamp"
+                    },
+                    "updated_at": {
+                        "type": "timestamp"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

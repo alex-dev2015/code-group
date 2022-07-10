@@ -31,6 +31,43 @@ class ClientController extends Controller
 
 
     /**
+     * * @OA\Post(
+     *     path="/api/clients",
+     *     summary="Adiciona um novo cliente",
+     *     @OA\RequestBody(
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 @OA\Property(
+     *                     property="name",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="cpf",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="mail",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="phone",
+     *                     type="string" 
+     *                 ),
+     *                 @OA\Property(
+     *                     property="address",
+     *                     type="string" 
+     *                 ),
+     *                 example={"name": "Alex Sousa", "cpf": "04298745670", "mail": "alex.sousa20@hotmail.com", "phone": "98988888888", "address": "Rua da Esperança"}
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK"
+     *     )
+     * )
+     * 
      * Cadastra um novo cliente
      *
      * @param  \Illuminate\Http\Request  $request
@@ -45,8 +82,16 @@ class ClientController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/clients/{client}",
+     *     path="/api/clients/{client}",
      *     summary="Mostra os detalhes de um cliente",
+     *     @OA\Parameter(
+     *         description="Código do Cliente",
+     *         in="path",
+     *         name="client",
+     *         required=true,
+     *         @OA\Schema(type="integer"),
+     *         @OA\Examples(example="id", value="1", summary="Código do cliente."),
+     *     ),
      *     @OA\Response(
      *         response=200,
      *         description="OK"
@@ -79,6 +124,52 @@ class ClientController extends Controller
 
 
     /**
+     *  * @OA\Put(
+     *     path="/api/clients/{client}",
+     *     summary="Atualiza um Cliente",
+     *     @OA\Parameter(
+     *         description="Código do Cliente",
+     *         in="path",
+     *         name="client",
+     *         required=true,
+     *         @OA\Schema(type="integer"),
+     *         @OA\Examples(example="id", value="1", summary="Código do cliente."),
+     *     ),
+     *     @OA\RequestBody(
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 @OA\Property(
+     *                     property="name",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="cpf",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="mail",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="phone",
+     *                     type="string" 
+     *                 ),
+     *                 @OA\Property(
+     *                     property="address",
+     *                     type="string" 
+     *                 ),
+     *                 example={"name": "Alex Sousa", "cpf": "04298745670", "mail": "alex.sousa20@hotmail.com", "phone": "98988888888", "address": "Rua da Esperança"}
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK"
+     *     )
+     * )
+     * 
+     * 
      * Atualiza os dados de um cliente.
      *
      * @param  ClientRequest
