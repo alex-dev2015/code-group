@@ -145,6 +145,34 @@
                     }
                 }
             }
+        },
+        "/api/clients/search/{cpf}": {
+            "get": {
+                "summary": "Realiza a busca de um cliente pelo CPF",
+                "operationId": "237cde71db255f531da30a87cff6055b",
+                "parameters": [
+                    {
+                        "name": "cpf",
+                        "in": "path",
+                        "description": "CPF do cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "cpf": {
+                                "summary": "CPF do Cliente",
+                                "value": "04236547890"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
         }
     },
     "components": {

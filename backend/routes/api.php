@@ -13,4 +13,4 @@ use App\Http\Controllers\ClientController;
 */
 
 Route::apiResource('clients', ClientController::class);
-Route::get('/search', [ClientController::class, 'search'])->name('clients.search');
+Route::get('clients/search/{cpf}', [ClientController::class, 'search'])->name('clients.search');

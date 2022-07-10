@@ -54,7 +54,7 @@ const Home = () => {
 
     function handleSearch(event: FormEvent) {
         event.preventDefault();
-        api.get(`search?cpf=${searchCpf}`)
+        api.get(`clients/search/${searchCpf}`)
             .then((response) => {
                 if (response.data.length == 0) {
                     alert('Cliente não encontrado')
@@ -67,7 +67,7 @@ const Home = () => {
 
             })
             .catch((result) => {
-                console.log(result.message);
+                alert("Erro ao realizar busca: \n" + result.message)
 
             })
     }

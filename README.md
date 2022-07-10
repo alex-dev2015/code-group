@@ -71,9 +71,7 @@ http:\\localhost:8000
 Após subir o servidor, é possível acessar a documentação da API através do seguinte link:
 
 ```
-
 http://localhost:8000/api/documentation
-
 ```
 
 ### 📊 Instalação do Frontend <a name = "frontend"></a>
@@ -81,7 +79,7 @@ http://localhost:8000/api/documentation
 ```
 $ cd frontend
 ```
-Instação das dependências
+Instalação das dependências
 
 ```
 $ npm install

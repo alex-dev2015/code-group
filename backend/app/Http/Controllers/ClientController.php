@@ -110,6 +110,22 @@ class ClientController extends Controller
     }
 
     /**
+     * @OA\Get(
+     *     path="/api/clients/search/{cpf}",
+     *     summary="Realiza a busca de um cliente pelo CPF",
+     *     @OA\Parameter(
+     *         description="CPF do cliente",
+     *         in="path",
+     *         name="cpf",
+     *         required=true,
+     *         @OA\Schema(type="string"),
+     *         @OA\Examples(example="cpf", value="04236547890", summary="CPF do Cliente"),
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK"
+     *     )    
+     * )
      * Pesquisa cliente por cpf
      * 
      * @param \Illuminate\Http\Request  $request
