@@ -1,28 +1,74 @@
 
+:root {
+  --cor-primaria-success: rgb(240, 218, 74);
+  --cor-hover-success: rgb(252, 234, 113);
+  --cor-secundaria-success: rgb(251, 136, 5);
+
+  --cor-primaria-info: rgb(61, 157, 246);
+  --cor-hover-info: rgb(116, 134, 158);
+  --cor-secundaria-info: rgb(31, 62, 88);
+
+  --cor-primaria-danger: rgb(200, 75, 75);
+  --cor-hover-danger: rgb(158, 116, 116);
+  --cor-secundaria-danger: rgb(58, 22, 22);
+}
+
 .container{
   width: 90vw;
   margin: 0 auto;
 }
+
+h1{
+  text-align: center;
+}
+
+input{
+  flex: 1;
+    background: #343A40;
+    border-radius: 8px;
+    border: 0;
+    padding: 16px 24px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding-bottom: 15px;
+  top: 0;
+}
+
+.container-table{
+  max-height: 400px;
+  overflow-y: auto;
+  
+}
+
 .styled-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 25px 0;
+  
   font-size: 0.9em;
   font-family: sans-serif;
-  min-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
+
 .styled-table thead tr {
-  background-color: #A70E0F;
+  background-color: #343A40;
   color: #ffffff;
   text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .styled-table th,
 .styled-table td {
     padding: 12px 15px;
-    
 }
 
 .styled-table tbody tr {
@@ -33,12 +79,92 @@
   background-color: #f3f3f3;
 }
 
-.styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #A70E0F;
-}
 
 .styled-table tbody tr.active-row {
   font-weight: bold;
   color: #009879;
+}
+
+.btn {
+  border: none;
+  padding: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-success {
+  background-color: var(--cor-primaria-success);
+  outline: none;
+  color: var(--cor-secundaria-success)
+}
+
+
+.btn-success:hover {
+  background-color: var(--cor-hover-success);
+}
+
+.btn-success:active {
+  color:var(--cor-primaria-success);
+  background-color: var(--cor-secundaria-success);
+}
+
+/*INFO*/
+.btn-info {
+  background-color: var(--cor-primaria-info);
+  outline: none;
+  color: var(--cor-secundaria-info)
+}
+
+.btn-info:hover {
+  background-color: var(--cor-hover-info);
+}
+
+.btn-info:active {
+  color:var(--cor-primaria-info);
+  background-color: var(--cor-secundaria-info);
+}
+
+/*DANGER*/
+.btn-danger {
+  background-color: var(--cor-primaria-danger);
+  outline: none;
+  color: var(--cor-secundaria-danger)
+}
+
+.btn-danger:hover {
+  background-color: var(--cor-hover-danger);
+}
+
+.btn-danger:active {
+  color:var(--cor-primaria-danger);
+  background-color: var(--cor-secundaria-danger);
+}
+
+.pagination{
+  height: 40px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  border-top: 2px solid #343A40;
+}
+
+.pagination button{
+  width: 40px;
+  height: 40px;
+  background: #005ab4;
+  
+  border: none;
+    padding: 5px;
+    margin: 2px;
+    text-decoration: none;
+    cursor: pointer;
+  font-size: 16px;  
+    
+  /* color: #f3f3f3; */
+}
+
+.pagination button :disabled{
+  color: #7f8082;
 }
 

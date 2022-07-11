@@ -74,68 +74,77 @@ const Home = () => {
 
     return (
         <>
+        <h1>Página Inicial</h1>
             <div className="container">
-                <h1>Page Home</h1>
-
-                <Link to="/create/novo">
-                    <strong>Cadastro de Cliente</strong>
-                </Link>
-
-                <form onSubmit={handleSearch}>
-                    <label>
-                        Pesquisar
-                    </label>
+            
+                <header>
+                    
+                    <Link className='btn btn-info' to="/create/novo">
+                        <strong>Cadastro de Cliente</strong>
+                    </Link>
+                    <form onSubmit={handleSearch}>
                     <input
                         id="search"
                         name="search"
                         type="text"
                         value={searchCpf}
                         onChange={handleInputChange}
+                        placeholder="Pesquisar CPF..."
+                        maxLength={11}
                     />
-                    <button type="submit" >Pesquisar</button>
+                    <button hidden type="submit" >Pesquisar</button>
                 </form>
 
-                <table className="styled-table">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Nome</th>
-                            <th>CPF</th>
-                            <th>Email</th>
-                            <th>Telefone</th>
-                            <th>Endereço</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {clients.map(item => (
+                </header>
+
+
+                
+                <div className='container-table'>
+                    <table className="styled-table">
+                        <thead>
                             <tr>
-                                <td key={item.id}>{item.id}</td>
-                                <td>{item.name}</td>
-                                <td>{item.cpf}</td>
-                                <td>{item.mail}</td>
-                                <td>{item.phone}</td>
-                                <td>{item.address}</td>
-                                <td>
-                                    <button>
-                                        <Link to={`/create/${item.id}`}>Editar</Link>
-                                    </button>
-                                </td>
+                                <th>Id</th>
+                                <th>Nome</th>
+                                <th>CPF</th>
+                                <th>Email</th>
+                                <th>Telefone</th>
+                                <th>Endereço</th>
+                                <th>Ações</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-                {pages.map(page => (
-                    <button
-                        id="buttonPage"
-                        onClick={() => handleSelectedPage(page.label)}
-                        disabled={
-                            currentPage == page.label ? true : false
-                        }
-                    >
-                        {page.label}
-                    </button>
-                ))}
+                        </thead>
+                        <tbody>
+                            {clients.map(item => (
+                                <tr>
+                                    <td key={item.id}>{item.id}</td>
+                                    <td>{item.name}</td>
+                                    <td>{item.cpf}</td>
+                                    <td>{item.mail}</td>
+                                    <td>{item.phone}</td>
+                                    <td>{item.address}</td>
+                                    <td>
+                                        <Link
+                                            className='btn btn-danger'
+                                            to={`/create/${item.id}`}>Editar
+                                        </Link>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                <div className="pagination">
+                    {pages.map(page => (
+                        <button
+                            id="buttonPage"
+                            onClick={() => handleSelectedPage(page.label)}
+                            disabled={
+                                currentPage == page.label ? true : false
+                            }
+                        >
+                            {page.label}
+                        </button>
+                    ))}
+                </div>
             </div>
         </>
     )

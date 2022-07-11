@@ -44,7 +44,7 @@ Entrar na pasta e realizar a instalação das dependências.
 $ cd backend
 $ composer install
 ```
-Editar o arquivo .env-example para .env , modicar as variáveis de ambiente de acesso ao banco e gerar a chave criptogravada.
+Editar o arquivo .env-example para .env , modicar as variáveis de ambiente de acesso ao banco e gerar a chave criptografada.
 
 
 ```
